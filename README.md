@@ -1,4 +1,4 @@
-__# FastAPI uv Baked Template (Internal)
+# FastAPI uv Baked Template (Internal)
 
 Status: Internal tool (v1.0, frozen)
 
