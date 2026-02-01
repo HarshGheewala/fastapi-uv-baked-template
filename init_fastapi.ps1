@@ -348,12 +348,13 @@ app = FastAPI(title="$projectName", version="1.0", lifespan=lifespan)
 
 #Middleares
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_headers=["*"],
-    allow_methods=["*"]
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_headers=["*"],
+        allow_methods=["*"]
 )
+
 app.add_middleware(LogMiddleware)
 
 #Routes
@@ -364,8 +365,12 @@ else {
 @"
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
+from app.middleware.log_middleware import LogMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 from app.logging_config import setup_logging
 from app.api.v1.router import router
+
+
 
 setup_logging()
 
@@ -379,11 +384,13 @@ app = FastAPI(title="$projectName", version="1.0", lifespan=lifespan)
 
 #Middleware
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_headers=["*"],
-    allow_methods=["*"]
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_headers=["*"],
+        allow_methods=["*"]
+    )
+
 app.add_middleware(LogMiddleware)
 
 #Routes
